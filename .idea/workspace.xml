@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2e80b3e9-f5da-457b-9e3e-65e78423aa2e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Data Science.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Data Science.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/various/ML_database/Regression_Matrix.py" beforeDir="false" afterPath="$PROJECT_DIR$/various/ML_database/Regression_Matrix.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/various/ML_database/train_test_split_example.py" beforeDir="false" afterPath="$PROJECT_DIR$/various/ML_database/train_test_split_example.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/various/eklploracyjna_analiza_danych/DataFrameCreation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/various/eklploracyjna_analiza_danych/ILOC.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/various/eklploracyjna_analiza_danych/Initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/various/eklploracyjna_analiza_danych/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/various/pandas/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/various/f1/F1_ML.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/various/f1/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/various/matplotlib/training.png" beforeDir="false" afterPath="$PROJECT_DIR$/various/matplotlib/training.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/various/numpy/NumpyInitial.py" beforeDir="false" afterPath="$PROJECT_DIR$/various/numpy/NumpyInitial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/various/pandasy/100DaysOfPandas.py" beforeDir="false" afterPath="$PROJECT_DIR$/various/pandas/100DaysOfPandas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/various/pandasy/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/various/statistics/geenral_wykres.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;pawelrumia&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/pawelrumia/DataScience.git&quot;,
+    &quot;accountId&quot;: &quot;9568830e-8b5f-43b0-ad7c-e0268b6f833c&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/Programs/Python/Python313/Lib/tkinter/__init__.py" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2okTgQJ3dRpaRHbXyhnMjReb1M9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.Python tests in HousingMLProject.py.executor": "Run",
+    "Python.100DaysOfPandas.executor": "Run",
+    "Python.DataFrameCreation (1).executor": "Run",
+    "Python.DataFrameCreation.executor": "Run",
+    "Python.F1_ML.executor": "Run",
+    "Python.FunctionsExamples.executor": "Run",
+    "Python.FunkcjaKwadratowa.executor": "Run",
+    "Python.HousingMLProject.executor": "Run",
+    "Python.ILOC.executor": "Run",
+    "Python.Initial.executor": "Run",
+    "Python.KNearestNeighbourAlgorythm.executor": "Run",
+    "Python.KerasInitial.executor": "Run",
+    "Python.LogisticRegression.executor": "Run",
+    "Python.MatplotlibMathBasic.executor": "Run",
+    "Python.MatplotlibTraining.executor": "Run",
+    "Python.Module2.executor": "Run",
+    "Python.NumpyGeneralStuff.executor": "Run",
+    "Python.NumpyInitial.executor": "Run",
+    "Python.Population.executor": "Run",
+    "Python.Regression_Matrix.executor": "Run",
+    "Python.SimpleLinearRegression.executor": "Run",
+    "Python.SimpleLinearRegression2.executor": "Run",
+    "Python.Sumowanie.executor": "Run",
+    "Python.bitcoin.executor": "Run",
+    "Python.cancer.executor": "Run",
+    "Python.cross_validation_examples.executor": "Run",
+    "Python.deeplearning1.executor": "Run",
+    "Python.geenral_wykres.executor": "Run",
+    "Python.heart.executor": "Run",
+    "Python.imdb (1).executor": "Run",
+    "Python.numpy_szkoła.executor": "Run",
+    "Python.power_law_example.executor": "Run",
+    "Python.recencje.executor": "Run",
+    "Python.scikit_studia.executor": "Run",
+    "Python.scikit_studia_zadanie.executor": "Run",
+    "Python.scikitlearn_examples.executor": "Run",
+    "Python.sp500.executor": "Run",
+    "Python.titanic.executor": "Run",
+    "Python.toxicmodel.executor": "Run",
+    "Python.train_test_split_example.executor": "Run",
+    "Python.wine_cwiczenie.executor": "Run",
+    "Python.xgb boost.executor": "Run",
+    "Python.xgb boost_wykresscatterplot.executor": "Run",
+    "Python.zadanie 6.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Asus/PycharmProjects/DataScience/various/resources",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Asus\PycharmProjects\DataScience\various\resources" />
+      <recent name="C:\Users\Asus\PycharmProjects\DataScience\various\scikitlearn" />
+      <recent name="C:\Users\mazurp2\PycharmProjects\Data Science\various\resources" />
+      <recent name="C:\Users\mazurp2\PycharmProjects\Data Science\.venv" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Asus\PycharmProjects\DataScience\various\resources" />
+      <recent name="C:\Users\Asus\PycharmProjects\DataScience\various\scikitlearn" />
+      <recent name="C:\Users\mazurp2\PycharmProjects\Data Science\various" />
+      <recent name="C:\Users\mazurp2\PycharmProjects\Data Science\eklploracyjna_analiza_danych" />
+      <recent name="C:\Users\mazurp2\PycharmProjects\Data Science\eklploracyjna_analiza_danych\various" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.SeabornTutorial (1)">
+    <configuration name="100DaysOfPandas" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Data Science" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/various/pandasy" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/various/pandasy/100DaysOfPandas.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="SeabornTutorial (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Data Science" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/forDataScience/seaborn" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/forDataScience/seaborn/SeabornTutorial.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="SeabornTutorial" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Data Science" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/various/seaborn" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/various/seaborn/SeabornTutorial.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="bitcoin" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Data Science" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/various/scikitlearn" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/various/scikitlearn/bitcoin.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="cancer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Data Science" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/various/scikitlearn" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/various/scikitlearn/cancer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.SeabornTutorial (1)" />
+        <item itemvalue="Python.SeabornTutorial" />
+        <item itemvalue="Python.cancer" />
+        <item itemvalue="Python.bitcoin" />
+        <item itemvalue="Python.100DaysOfPandas" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-fb887030ada0-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.21565.199" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2e80b3e9-f5da-457b-9e3e-65e78423aa2e" name="Changes" comment="" />
+      <created>1731412685809</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1731412685809</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/various/ML_database/Regression_Matrix.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/various/ML_database/KNearestNeighbourAlgorythm.py</url>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
