@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from xgboost import XGBClassifier
 
-wine = pd.read_csv("C:\\Users\\Asus\\PycharmProjects\\DataScience\\various\\resources\\wine.csv", delimiter=';')
+wine = pd.read_csv("C:\\Users\\Asus\\PycharmProjects\\DataScience\\data\\wine.csv", delimiter=';')
 wine_nas = wine.isnull().sum()
 plt.figure(figsize=(10, 6))
 sns.histplot(wine["quality"], bins=7, color='red', kde=False)
