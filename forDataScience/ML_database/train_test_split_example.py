@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-housing = pd.read_csv("C:\\Users\\Asus\\PycharmProjects\\DataScience\\various\\resources\\Melbourne_housing.csv")
+housing = pd.read_csv("C:\\Users\\Asus\\PycharmProjects\\DataScience\\data\\Melbourne_housing.csv")
 
 print(housing.head())
 print(housing.describe())

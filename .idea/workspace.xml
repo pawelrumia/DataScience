@@ -4,8 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e80b3e9-f5da-457b-9e3e-65e78423aa2e" name="Changes" comment="Some DS stuff">
+    <list default="true" id="2e80b3e9-f5da-457b-9e3e-65e78423aa2e" name="Changes" comment="Delete">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forDataScience/ML_database/train_test_split_example.py" beforeDir="false" afterPath="$PROJECT_DIR$/forDataScience/ML_database/train_test_split_example.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forDataScience/etc/jupyter/jupyter_notebook_config.d/jupyter-lsp-notebook.json" beforeDir="false" afterPath="$PROJECT_DIR$/forDataScience/notebooks/jupyter/jupyter_notebook_config.d/jupyter-lsp-notebook.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forDataScience/etc/jupyter/jupyter_notebook_config.d/jupyterlab.json" beforeDir="false" afterPath="$PROJECT_DIR$/forDataScience/notebooks/jupyter/jupyter_notebook_config.d/jupyterlab.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forDataScience/etc/jupyter/jupyter_server_config.d/jupyter-lsp-jupyter-server.json" beforeDir="false" afterPath="$PROJECT_DIR$/forDataScience/notebooks/jupyter/jupyter_server_config.d/jupyter-lsp-jupyter-server.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forDataScience/etc/jupyter/jupyter_server_config.d/jupyter_server_terminals.json" beforeDir="false" afterPath="$PROJECT_DIR$/forDataScience/notebooks/jupyter/jupyter_server_config.d/jupyter_server_terminals.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forDataScience/etc/jupyter/jupyter_server_config.d/jupyterlab.json" beforeDir="false" afterPath="$PROJECT_DIR$/forDataScience/notebooks/jupyter/jupyter_server_config.d/jupyterlab.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forDataScience/etc/jupyter/jupyter_server_config.d/notebook_shim.json" beforeDir="false" afterPath="$PROJECT_DIR$/forDataScience/notebooks/jupyter/jupyter_server_config.d/notebook_shim.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forDataScience/etc/jupyter/labconfig/page_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/forDataScience/notebooks/jupyter/labconfig/page_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forDataScience/etc/jupyter/nbconfig/notebook.d/jupyterlab-plotly.json" beforeDir="false" afterPath="$PROJECT_DIR$/forDataScience/notebooks/jupyter/nbconfig/notebook.d/jupyterlab-plotly.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forDataScience/resources/Melbourne_housing.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/Melbourne_housing.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forDataScience/resources/toxic_subset.csv" beforeDir="false" afterPath="$PROJECT_DIR$/forDataScience/resources/toxic_subset.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +35,11 @@
       <list>
         <option value="mazurp2 &lt;pawel.mazur@contractors.roche.com&gt;" />
       </list>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -82,6 +98,7 @@
     "Python.SimpleLinearRegression.executor": "Run",
     "Python.SimpleLinearRegression2.executor": "Run",
     "Python.Sumowanie.executor": "Run",
+    "Python.app.executor": "Run",
     "Python.bitcoin.executor": "Run",
     "Python.cancer.executor": "Run",
     "Python.cross_validation_examples.executor": "Run",
@@ -105,7 +122,7 @@
     "Python.zadanie 6.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "data__project",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/Asus/PycharmProjects/DataScience/various/resources",
     "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Console Font"
@@ -119,36 +136,14 @@
       <recent name="C:\Users\mazurp2\PycharmProjects\Data Science\.venv" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Asus\PycharmProjects\DataScience\data" />
       <recent name="C:\Users\Asus\PycharmProjects\DataScience\general_python" />
       <recent name="C:\Users\Asus\PycharmProjects\DataScience\various\resources" />
       <recent name="C:\Users\Asus\PycharmProjects\DataScience\various\scikitlearn" />
       <recent name="C:\Users\mazurp2\PycharmProjects\Data Science\various" />
-      <recent name="C:\Users\mazurp2\PycharmProjects\Data Science\eklploracyjna_analiza_danych" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.SeabornTutorial (1)">
-    <configuration name="100DaysOfPandas" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Data Science" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/various/pandasy" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/various/pandasy/100DaysOfPandas.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.app">
     <configuration name="SeabornTutorial (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Data Science" />
       <option name="ENV_FILES" value="" />
@@ -193,7 +188,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="bitcoin" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Data Science" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -202,11 +197,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/various/scikitlearn" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/various/scikitlearn/bitcoin.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -237,13 +232,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="train_test_split_example" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Data Science" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/forDataScience/ML_database" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/forDataScience/ML_database/train_test_split_example.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.app" />
+        <item itemvalue="Python.train_test_split_example" />
         <item itemvalue="Python.SeabornTutorial (1)" />
         <item itemvalue="Python.SeabornTutorial" />
         <item itemvalue="Python.cancer" />
-        <item itemvalue="Python.bitcoin" />
-        <item itemvalue="Python.100DaysOfPandas" />
       </list>
     </recent_temporary>
   </component>
@@ -271,12 +288,21 @@
       <option name="project" value="LOCAL" />
       <updated>1779273488194</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Delete">
+      <option name="closed" value="true" />
+      <created>1779273897703</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1779273897703</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Some DS stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some DS stuff" />
+    <MESSAGE value="Delete" />
+    <option name="LAST_COMMIT_MESSAGE" value="Delete" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
