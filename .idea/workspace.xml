@@ -4,23 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e80b3e9-f5da-457b-9e3e-65e78423aa2e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Data Science.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Data Science.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="2e80b3e9-f5da-457b-9e3e-65e78423aa2e" name="Changes" comment="Some DS stuff">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/various/ML_database/Regression_Matrix.py" beforeDir="false" afterPath="$PROJECT_DIR$/various/ML_database/Regression_Matrix.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/various/ML_database/train_test_split_example.py" beforeDir="false" afterPath="$PROJECT_DIR$/various/ML_database/train_test_split_example.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/various/eklploracyjna_analiza_danych/DataFrameCreation.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/various/eklploracyjna_analiza_danych/ILOC.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/various/eklploracyjna_analiza_danych/Initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/various/eklploracyjna_analiza_danych/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/various/pandas/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/various/f1/F1_ML.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/various/f1/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/various/matplotlib/training.png" beforeDir="false" afterPath="$PROJECT_DIR$/various/matplotlib/training.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/various/numpy/NumpyInitial.py" beforeDir="false" afterPath="$PROJECT_DIR$/various/numpy/NumpyInitial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/various/pandasy/100DaysOfPandas.py" beforeDir="false" afterPath="$PROJECT_DIR$/various/pandas/100DaysOfPandas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/various/pandasy/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/various/statistics/geenral_wykres.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +20,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="mazurp2 &lt;pawel.mazur@contractors.roche.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -50,7 +40,9 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$USER_HOME$/AppData/Local/Programs/Python/Python313/Lib/tkinter/__init__.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/AppData/Local/Programs/Python/Python312/Lib/site-packages/pandas/io/parsers/readers.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/AppData/Local/Programs/Python/Python312/Lib/site-packages/transformers/modeling_tf_pytorch_utils.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/AppData/Local/Programs/Python/Python312/Lib/site-packages/transformers/modeling_tf_utils.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -85,6 +77,8 @@
     "Python.NumpyInitial.executor": "Run",
     "Python.Population.executor": "Run",
     "Python.Regression_Matrix.executor": "Run",
+    "Python.SeabornTutorial (1).executor": "Run",
+    "Python.SeabornTutorial.executor": "Run",
     "Python.SimpleLinearRegression.executor": "Run",
     "Python.SimpleLinearRegression2.executor": "Run",
     "Python.Sumowanie.executor": "Run",
@@ -114,7 +108,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/Asus/PycharmProjects/DataScience/various/resources",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Console Font"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -125,11 +119,11 @@
       <recent name="C:\Users\mazurp2\PycharmProjects\Data Science\.venv" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Asus\PycharmProjects\DataScience\general_python" />
       <recent name="C:\Users\Asus\PycharmProjects\DataScience\various\resources" />
       <recent name="C:\Users\Asus\PycharmProjects\DataScience\various\scikitlearn" />
       <recent name="C:\Users\mazurp2\PycharmProjects\Data Science\various" />
       <recent name="C:\Users\mazurp2\PycharmProjects\Data Science\eklploracyjna_analiza_danych" />
-      <recent name="C:\Users\mazurp2\PycharmProjects\Data Science\eklploracyjna_analiza_danych\various" />
     </key>
   </component>
   <component name="RunManager" selected="Python.SeabornTutorial (1)">
@@ -269,17 +263,30 @@
       <option name="presentableId" value="Default" />
       <updated>1731412685809</updated>
     </task>
+    <task id="LOCAL-00001" summary="Some DS stuff">
+      <option name="closed" value="true" />
+      <created>1779273488193</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1779273488194</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Some DS stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some DS stuff" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/various/ML_database/Regression_Matrix.py</url>
+          <url>file://$PROJECT_DIR$/forDataScience/ML_database/Regression_Matrix.py</url>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/various/ML_database/KNearestNeighbourAlgorythm.py</url>
+          <url>file://$PROJECT_DIR$/forDataScience/ML_database/KNearestNeighbourAlgorythm.py</url>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
