@@ -108,5 +108,27 @@ docker stop <CONTAINER_ID>
 docker system prune -f
 ```
 
+### 📡 Testowanie architektury strumieniowej (Apache Kafka & TensorFlow Live)
+
+Projekt umożliwia symulację przetwarzania danych w czasie rzeczywistym. Aby uruchomić potok streamingowy:
+
+1. **Uruchom lokalny serwer Apache Kafka:**
+   ```bash
+   docker run -d --name kafka-server -p 9092:9092 -e KAFKA_NODE_ID=1 -e KAFKA_PROCESS_ROLES=broker,controller -e KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9092,CONTROLLER://0.0.0.0:9093 -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092 -e KAFKA_CONTROLLER_LISTENER_NAMES=CONTROLLER -e KAFKA_LISTENER_SECURITY_PROTOCOL_MAP=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT -e KAFKA_CONTROLLER_QUORUM_VOTERS=1@localhost:9093 -e KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1 apache/kafka:latest
+   ```
+
+2. **W osobnym terminalu uruchom Konsumenta (Silnik Predykcji Deep Learning):**
+   ```bash
+   cd src
+   python kafka_consumer_dl.py
+   ```
+
+3. **W kolejnym terminalu uruchom Producenta (Generator Strumienia Ofert):**
+   ```bash
+   cd src
+   python kafka_producer.py
+   ```
+
+
 ---
 *Projekt rozwijany w celach demonstracyjnych i portfolio z zakresu Data Science & MLOps.*
