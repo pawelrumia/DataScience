@@ -28,6 +28,12 @@ DataScience/
 
 ---
 
+# Screenshots
+
+## TensorBoard
+
+![TensorBoard](images/dashboard.png)
+
 ## 🛠️ Instrukcja uruchomienia lokalnego
 
 Wykonaj poniższe kroki w terminalu swojego środowiska (np. PyCharm Terminal), aby uruchomić projekt na własnym komputerze.
@@ -80,6 +86,26 @@ git commit -m "Add production-ready Melbourne Housing ML Dashboard with Plotly a
 
 # 4. Wypchnięcie kodu na GitHub
 git push origin master
+```
+### 🐳 Zarządzanie aplikacją przez Docker
+
+Poniżej znajduje się kompletna sekwencja komend używanych do budowania, uruchamiania i czyszczenia środowiska kontenerowego:
+
+```bash
+# 1. Budowanie obrazu kontenera (na podstawie Dockerfile)
+docker build -t melbourne-housing-ml .
+
+# 2. Uruchomienie kontenera z przekierowaniem portu na lokalną maszynę
+docker run -p 8501:8501 melbourne-housing-ml
+
+# 3. Podgląd aktualnie uruchomionych kontenerów i ich identyfikatorów (Container ID)
+docker ps
+
+# 4. Zatrzymanie działającego kontenera (zamiast skrótu Ctrl+C)
+docker stop <CONTAINER_ID>
+
+# 5. Usunięcie nieużywanych, wiszących warstw i obrazów w celu zwolnienia miejsca na dysku
+docker system prune -f
 ```
 
 ---

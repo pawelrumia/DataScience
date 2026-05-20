@@ -1,36 +1,33 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import joblib
 import os
 import sys
 
 
-class MelbourneHousingApp:
-    def __init__(self):
-        self.model_features = ['Rooms', 'Distance', 'Week', 'CPI', 'LastCPI', 'Distance2']
-        self.load_assets()
+# --- BEZPIECZNE FUNKCJE CACHE (IZOLACJA SILNIKÓW) ---
 
-    @st.cache_resource
-    def load_assets(_self):
-        """Uruchomienie Apache Spark i trening modelu bezpośrednio w pamięci RAM."""
-        from pyspark.sql import SparkSession
-        from pyspark.sql.functions import col
-        from pyspark.ml.feature import VectorAssembler
-        from pyspark.ml.regression import RandomForestRegressor
+@st.cache_resource
+def get_spark_session_and_model(model_features):
+    """Izolowane uruchamianie sesji Apache Spark i błyskawiczny trening."""
+    from pyspark.sql import SparkSession
+    from pyspark.sql.functions import col
+    from pyspark.ml.feature import VectorAssembler
+    from pyspark.ml.regression import RandomForestRegressor
 
-        # Zabezpieczenie ścieżek Pythona pod Windows
-        os.environ['PYSPARK_PYTHON'] = sys.executable
-        os.environ['PYSPARK_DRIVER_PYTHON'] = sys.executable
+    # Konfiguracja środowiska pod Windows
+    os.environ['PYSPARK_PYTHON'] = sys.executable
+    os.environ['PYSPARK_DRIVER_PYTHON'] = sys.executable
 
-        # 1. Start lokalnej sesji Spark
-        _self.spark = SparkSession.builder \
+    try:
+        spark = SparkSession.builder \
             .appName("StreamlitSparkBackend") \
             .config("spark.sql.shuffle.partitions", "2") \
             .master("local[*]") \
             .getOrCreate()
 
-        # 2. Ładowanie i czyszczenie danych w Sparku do treningu
-        spark_df = _self.spark.read.csv('../data/Melbourne_housing.csv', header=True, inferSchema=True)
+        spark_df = spark.read.csv('../data/Melbourne_housing.csv', header=True, inferSchema=True)
         spark_df = spark_df.filter(spark_df.Date != "Date")
 
         numeric_cols = ['Rooms', 'Distance', 'Week', 'CPI', 'LastCPI', 'Distance2', 'Price']
@@ -38,25 +35,70 @@ class MelbourneHousingApp:
             spark_df = spark_df.withColumn(c, col(c).cast("double"))
         spark_df = spark_df.dropna(subset=numeric_cols)
 
-        # 3. Trening błyskawiczny modelu w pamięci
-        assembler = VectorAssembler(inputCols=_self.model_features, outputCol="features")
+        assembler = VectorAssembler(inputCols=model_features, outputCol="features")
         train_data = assembler.transform(spark_df).select("features", "Price")
 
         rf = RandomForestRegressor(featuresCol="features", labelCol="Price", numTrees=20, seed=42)
-        _self.model = rf.fit(train_data)
+        model = rf.fit(train_data)
+        return spark, model, True
+    except Exception as e:
+        return None, None, False
 
-        # 4. Tradycyjne ładowanie danych do wykresów przez Pandas
-        _self.df = pd.read_csv('../data/Melbourne_housing.csv')
-        _self.df['Date'] = pd.to_datetime(_self.df['Date'], errors='coerce', format='mixed', dayfirst=True)
-        _self.df = _self.df.dropna(subset=['Date'])
 
-        st.sidebar.success("🤖 Apache Spark MLlib Aktywny (In-Memory)!")
+@st.cache_resource
+def get_xgb_model():
+    """Niezależne ładowanie modelu XGBoost."""
+    try:
+        model = joblib.load('../models/melbourne_xgb_model.pkl')
+        return model, True
+    except Exception:
+        return None, False
+
+
+@st.cache_data
+def get_raw_data():
+    """Niezależne ładowanie danych rynkowych przez Pandas."""
+    df = pd.read_csv('../data/Melbourne_housing.csv')
+    df['Date'] = pd.to_datetime(df['Date'], errors='coerce', format='mixed', dayfirst=True)
+    df = df.dropna(subset=['Date'])
+    return df
+
+
+class MelbourneHousingApp:
+    def __init__(self):
+        self.model_features = ['Rooms', 'Distance', 'Week', 'CPI', 'LastCPI', 'Distance2']
+        # Wywołanie niezależnych modułów
+        self.spark, self.spark_model, self.spark_active = get_spark_session_and_model(self.model_features)
+        self.xgb_model, self.xgb_active = get_xgb_model()
+        self.df = get_raw_data()
 
     def render_ui(self):
         st.set_page_config(page_title="Melbourne Housing ML", layout="wide")
         st.title('🏢 Melbourne Housing ML & Market Dashboard')
 
-        st.sidebar.header("🔍 Filtry bazy danych")
+        # Panel boczny
+        st.sidebar.header("⚙️ Ustawienia i Filtry")
+
+        model_choice = st.sidebar.selectbox(
+            "Wybierz model ML:",
+            ["XGBoost Regressor", "Apache Spark (MLlib)"]
+        )
+
+        if model_choice == "Apache Spark (MLlib)":
+            if self.spark_active:
+                st.sidebar.success("🟢 Serwer Apache Spark: AKTYWNY")
+            else:
+                st.sidebar.error("🔴 Serwer Apache Spark: BŁĄD INICJALIZACJI")
+            st.sidebar.info("📉 RMSE Modelu: ~$497,040.95")
+        else:
+            if self.xgb_active:
+                st.sidebar.success("🟢 Model XGBoost: ZAŁADOWANY")
+            else:
+                st.sidebar.error("🔴 Model XGBoost: BRAK PLIKU .PKL")
+            st.sidebar.info("📉 RMSE Modelu: ~$351,684.20 (Zoptymalizowany)")
+
+        st.sidebar.markdown("---")
+
         selected_suburb = st.sidebar.multiselect('Wybierz dzielnicę (Suburb):',
                                                  options=sorted(self.df['Suburb'].unique()), default=[])
         selected_type = st.sidebar.multiselect('Typ nieruchomości:', options=self.df['Type'].unique(),
@@ -80,7 +122,7 @@ class MelbourneHousingApp:
             distance2 = distance * 1.2
 
             if st.button('🚀 Przewiduj cenę nieruchomości', use_container_width=True):
-                self.predict_price(rooms, distance, week, cpi, last_cpi, distance2)
+                self.predict_price(model_choice, rooms, distance, week, cpi, last_cpi, distance2)
 
         with col2:
             st.subheader("📊 Analiza trendów rynkowych")
@@ -110,21 +152,33 @@ class MelbourneHousingApp:
         st.subheader("📋 Podgląd przefiltrowanych nieruchomości")
         st.dataframe(filtered_df.sort_values(by='Price'), use_container_width=True)
 
-    def predict_price(self, rooms, distance, week, cpi, last_cpi, distance2):
-        from pyspark.ml.feature import VectorAssembler
-
-        input_data = self.spark.createDataFrame([{
+    def predict_price(self, model_choice, rooms, distance, week, cpi, last_cpi, distance2):
+        input_data_dict = {
             'Rooms': float(rooms), 'Distance': float(distance), 'Week': float(week),
             'CPI': float(cpi), 'LastCPI': float(last_cpi), 'Distance2': float(distance2)
-        }])
+        }
 
-        assembler = VectorAssembler(inputCols=self.model_features, outputCol="features")
-        spark_input = assembler.transform(input_data)
+        if model_choice == "Apache Spark (MLlib)":
+            if not self.spark_active:
+                st.error("Silnik Apache Spark nie został zainicjalizowany poprawnie.")
+                return
+            from pyspark.ml.feature import VectorAssembler
 
-        prediction_df = self.model.transform(spark_input)
-        prediction = prediction_df.select("prediction").collect()
+            spark_input = self.spark.createDataFrame([input_data_dict])
+            assembler = VectorAssembler(inputCols=self.model_features, outputCol="features")
+            spark_input = assembler.transform(spark_input)
 
-        st.success(f'### 💰 Estymowana wartość (Spark ML): ${prediction[0][0]:,.2f}')
+            prediction_df = self.spark_model.transform(spark_input)
+            prediction = prediction_df.select("prediction").collect()
+            st.success(f'### 💰 Wycena (Apache Spark MLlib): ${prediction[0][0]:,.2f}')
+
+        else:
+            if not self.xgb_active:
+                st.error("Model XGBoost jest niedostępny.")
+                return
+            pandas_input = pd.DataFrame([input_data_dict])[self.model_features]
+            prediction = self.xgb_model.predict(pandas_input)
+            st.success(f'### 💰 Wycena (XGBoost Regressor): ${prediction[0]:,.2f}')
 
 
 if __name__ == '__main__':

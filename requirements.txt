@@ -13,6 +13,6 @@ keras~=3.11.3
 keras-nightly~=3.7.0.dev2024122203
 scipy~=1.14.1
 h2o~=3.46.0.7
-tensorflow~=2.20.0
+tensorflow~=2.16.1
 kneed~=0.8.5
 transformers~=4.56.1
