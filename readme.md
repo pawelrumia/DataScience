@@ -136,6 +136,21 @@ Mimo że projekt został uruchomiony i przetestowany lokalnie w kontenerze Docke
 2. **Zamiast lokalnego zapisu -> Snowflake:** Odkomentowanie sekcji `.format("snowflake")` w połączeniu z dostarczonym słownikiem konfiguracji `snowflake_options` umożliwia bezpośrednie przesyłanie mikro-paczek (Micro-batches) do tabeli typu Fact Table wewnątrz chmurowej hurtowni **Snowflake**, implementując architekturę typu Kappa/Lambda.
 3. **Zamiast Hadoopa -> Cloud Storage:** W środowisku produkcyjnym punkty kontrolne (`checkpointLocation`) oraz dane tymczasowe są kierowane na AWS S3 lub Azure Blob Storage przy użyciu mechanizmów, które lokalnie emulują biblioteki Apache Hadoop.
 
+### 🧠 Wizualizacja procesu uczenia (TensorBoard)
+
+Projekt umożliwia śledzenie metryk treningowych głębokiej sieci neuronowej Keras w czasie rzeczywistym. 
+
+1. **Generowanie logów podczas treningu:**
+   ```bash
+   docker run -it -v \${PWD}/logs:/workspace/logs -w /workspace/src melbourne-housing-ml python dl_nn_model.py
+   ```
+
+2. **Uruchomienie serwera TensorBoard (Docker):**
+   ```bash
+   docker run -it -p 6006:6006 -v \${PWD}/logs:/workspace/logs -w /workspace melbourne-housing-ml tensorboard --logdir=logs --bind_all
+   ```
+   *Panel interaktywnych wykresów sieci neuronowej dostępny jest pod adresem: `http://localhost:6006`.*
+lub zwykłe             tensorboard --logdir=logs
 
 ---
 *Projekt rozwijany w celach demonstracyjnych i portfolio z zakresu Data Science & MLOps.*
