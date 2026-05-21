@@ -13,7 +13,7 @@ WORKDIR /workspace
 
 RUN pip install --no-cache-dir --upgrade pip setuptools wheel
 RUN pip install --no-cache-dir numpy pandas scikit-learn
-RUN pip install --no-cache-dir xgboost pyspark streamlit plotly joblib tensorflow confluent-kafka
+RUN pip install --no-cache-dir xgboost pyspark==3.5.0 streamlit plotly joblib tensorflow
 
 COPY . .
 
