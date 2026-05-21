@@ -128,6 +128,13 @@ Projekt umożliwia symulację przetwarzania danych w czasie rzeczywistym. Aby ur
    cd src
    python kafka_producer.py
    ```
+## ☁️ Enterprise Cloud Mapping (Databricks & Snowflake)
+
+Mimo że projekt został uruchomiony i przetestowany lokalnie w kontenerze Docker (przy użyciu zapisu do formatu JSON/Console), architektura kodu została przygotowana pod bezpośrednie wdrożenie w chmurze korporacyjnej:
+
+1. **Zamiast lokalnego Sparka -> Databricks:** Kod zawarty w `spark_warehouse_etl.py` wykorzystuje natywną składnię PySpark Structured Streaming, dzięki czemu może zostać bezpośrednio wklejony jako Job/Notebook w środowisku **Databricks** (np. na AWS lub Azure).
+2. **Zamiast lokalnego zapisu -> Snowflake:** Odkomentowanie sekcji `.format("snowflake")` w połączeniu z dostarczonym słownikiem konfiguracji `snowflake_options` umożliwia bezpośrednie przesyłanie mikro-paczek (Micro-batches) do tabeli typu Fact Table wewnątrz chmurowej hurtowni **Snowflake**, implementując architekturę typu Kappa/Lambda.
+3. **Zamiast Hadoopa -> Cloud Storage:** W środowisku produkcyjnym punkty kontrolne (`checkpointLocation`) oraz dane tymczasowe są kierowane na AWS S3 lub Azure Blob Storage przy użyciu mechanizmów, które lokalnie emulują biblioteki Apache Hadoop.
 
 
 ---

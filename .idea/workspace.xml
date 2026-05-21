@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2e80b3e9-f5da-457b-9e3e-65e78423aa2e" name="Changes" comment="Added TensorFlow showcase project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/streamlit_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/streamlit_app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,65 +72,65 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python tests.Python tests in HousingMLProject.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python.100DaysOfPandas.executor&quot;: &quot;Run&quot;,
-    &quot;Python.DataFrameCreation (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.DataFrameCreation.executor&quot;: &quot;Run&quot;,
-    &quot;Python.F1_ML.executor&quot;: &quot;Run&quot;,
-    &quot;Python.FunctionsExamples.executor&quot;: &quot;Run&quot;,
-    &quot;Python.FunkcjaKwadratowa.executor&quot;: &quot;Run&quot;,
-    &quot;Python.HousingMLProject.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ILOC.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Initial.executor&quot;: &quot;Run&quot;,
-    &quot;Python.KNearestNeighbourAlgorythm.executor&quot;: &quot;Run&quot;,
-    &quot;Python.KerasInitial.executor&quot;: &quot;Run&quot;,
-    &quot;Python.LogisticRegression.executor&quot;: &quot;Run&quot;,
-    &quot;Python.MatplotlibMathBasic.executor&quot;: &quot;Run&quot;,
-    &quot;Python.MatplotlibTraining.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Module2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.NumpyGeneralStuff.executor&quot;: &quot;Run&quot;,
-    &quot;Python.NumpyInitial.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Population.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Regression_Matrix.executor&quot;: &quot;Run&quot;,
-    &quot;Python.SeabornTutorial (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.SeabornTutorial.executor&quot;: &quot;Run&quot;,
-    &quot;Python.SimpleLinearRegression.executor&quot;: &quot;Run&quot;,
-    &quot;Python.SimpleLinearRegression2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Sumowanie.executor&quot;: &quot;Run&quot;,
-    &quot;Python.app.executor&quot;: &quot;Run&quot;,
-    &quot;Python.bitcoin.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cancer.executor&quot;: &quot;Run&quot;,
-    &quot;Python.cross_validation_examples.executor&quot;: &quot;Run&quot;,
-    &quot;Python.deeplearning1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.geenral_wykres.executor&quot;: &quot;Run&quot;,
-    &quot;Python.heart.executor&quot;: &quot;Run&quot;,
-    &quot;Python.imdb (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.numpy_szkoła.executor&quot;: &quot;Run&quot;,
-    &quot;Python.power_law_example.executor&quot;: &quot;Run&quot;,
-    &quot;Python.recencje.executor&quot;: &quot;Run&quot;,
-    &quot;Python.scikit_studia.executor&quot;: &quot;Run&quot;,
-    &quot;Python.scikit_studia_zadanie.executor&quot;: &quot;Run&quot;,
-    &quot;Python.scikitlearn_examples.executor&quot;: &quot;Run&quot;,
-    &quot;Python.sp500.executor&quot;: &quot;Run&quot;,
-    &quot;Python.streamlit_app.executor&quot;: &quot;Run&quot;,
-    &quot;Python.tensorflow_showcase.executor&quot;: &quot;Run&quot;,
-    &quot;Python.titanic.executor&quot;: &quot;Run&quot;,
-    &quot;Python.toxicmodel.executor&quot;: &quot;Run&quot;,
-    &quot;Python.train_test_split_example.executor&quot;: &quot;Run&quot;,
-    &quot;Python.wine_cwiczenie.executor&quot;: &quot;Run&quot;,
-    &quot;Python.xgb boost.executor&quot;: &quot;Run&quot;,
-    &quot;Python.xgb boost_wykresscatterplot.executor&quot;: &quot;Run&quot;,
-    &quot;Python.zadanie 6.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;additional__tensorflow&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Asus/PycharmProjects/DataScience/various/resources&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Console Font&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.Python tests in HousingMLProject.py.executor": "Run",
+    "Python.100DaysOfPandas.executor": "Run",
+    "Python.DataFrameCreation (1).executor": "Run",
+    "Python.DataFrameCreation.executor": "Run",
+    "Python.F1_ML.executor": "Run",
+    "Python.FunctionsExamples.executor": "Run",
+    "Python.FunkcjaKwadratowa.executor": "Run",
+    "Python.HousingMLProject.executor": "Run",
+    "Python.ILOC.executor": "Run",
+    "Python.Initial.executor": "Run",
+    "Python.KNearestNeighbourAlgorythm.executor": "Run",
+    "Python.KerasInitial.executor": "Run",
+    "Python.LogisticRegression.executor": "Run",
+    "Python.MatplotlibMathBasic.executor": "Run",
+    "Python.MatplotlibTraining.executor": "Run",
+    "Python.Module2.executor": "Run",
+    "Python.NumpyGeneralStuff.executor": "Run",
+    "Python.NumpyInitial.executor": "Run",
+    "Python.Population.executor": "Run",
+    "Python.Regression_Matrix.executor": "Run",
+    "Python.SeabornTutorial (1).executor": "Run",
+    "Python.SeabornTutorial.executor": "Run",
+    "Python.SimpleLinearRegression.executor": "Run",
+    "Python.SimpleLinearRegression2.executor": "Run",
+    "Python.Sumowanie.executor": "Run",
+    "Python.app.executor": "Run",
+    "Python.bitcoin.executor": "Run",
+    "Python.cancer.executor": "Run",
+    "Python.cross_validation_examples.executor": "Run",
+    "Python.deeplearning1.executor": "Run",
+    "Python.geenral_wykres.executor": "Run",
+    "Python.heart.executor": "Run",
+    "Python.imdb (1).executor": "Run",
+    "Python.numpy_szkoła.executor": "Run",
+    "Python.power_law_example.executor": "Run",
+    "Python.recencje.executor": "Run",
+    "Python.scikit_studia.executor": "Run",
+    "Python.scikit_studia_zadanie.executor": "Run",
+    "Python.scikitlearn_examples.executor": "Run",
+    "Python.sp500.executor": "Run",
+    "Python.streamlit_app.executor": "Run",
+    "Python.tensorflow_showcase.executor": "Run",
+    "Python.titanic.executor": "Run",
+    "Python.toxicmodel.executor": "Run",
+    "Python.train_test_split_example.executor": "Run",
+    "Python.wine_cwiczenie.executor": "Run",
+    "Python.xgb boost.executor": "Run",
+    "Python.xgb boost_wykresscatterplot.executor": "Run",
+    "Python.zadanie 6.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "ecommerce__pipeline",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Asus/PycharmProjects/DataScience/various/resources",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Console Font"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Asus\PycharmProjects\DataScience\various\resources" />
