@@ -1,0 +1,8 @@
+{
+    "framework": "PyTorch",
+    "model_name": "Neural Network MLP",
+    "accuracy": 0.843,
+    "precision": 0.7162,
+    "recall": 0.6107,
+    "training_time_seconds": 47.37
+}

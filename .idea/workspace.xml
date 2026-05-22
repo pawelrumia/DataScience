@@ -4,9 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e80b3e9-f5da-457b-9e3e-65e78423aa2e" name="Changes" comment="Docs: Add TensorBoard execution guidelines to README">
+    <list default="true" id="2e80b3e9-f5da-457b-9e3e-65e78423aa2e" name="Changes" comment="Benchmark: Update tournament results after intensive model retraining">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml_benchmark_suite/benchmark_results/pytorch_neural_network_mlp.json" beforeDir="false" afterPath="$PROJECT_DIR$/ml_benchmark_suite/benchmark_results/pytorch_neural_network_mlp.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml_benchmark_suite/benchmark_results/sklearn_k-nearest_neighbors.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml_benchmark_suite/benchmark_results/sklearn_random_forest.json" beforeDir="false" afterPath="$PROJECT_DIR$/ml_benchmark_suite/benchmark_results/sklearn_random_forest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml_benchmark_suite/benchmark_results/tf_neural_network_mlp.json" beforeDir="false" afterPath="$PROJECT_DIR$/ml_benchmark_suite/benchmark_results/tf_neural_network_mlp.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml_benchmark_suite/pytorch/train_pytorch.py" beforeDir="false" afterPath="$PROJECT_DIR$/ml_benchmark_suite/pytorch/train_pytorch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml_benchmark_suite/scikit_learn/train_sklearn.py" beforeDir="false" afterPath="$PROJECT_DIR$/ml_benchmark_suite/scikit_learn/train_sklearn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml_benchmark_suite/tensorflow/train_tf.py" beforeDir="false" afterPath="$PROJECT_DIR$/ml_benchmark_suite/tensorflow/train_tf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,6 +116,7 @@
     "Python.geenral_wykres.executor": "Run",
     "Python.heart.executor": "Run",
     "Python.imdb (1).executor": "Run",
+    "Python.initial_iris_dataset.executor": "Run",
     "Python.numpy_szkoła.executor": "Run",
     "Python.power_law_example.executor": "Run",
     "Python.recencje.executor": "Run",
@@ -125,7 +135,7 @@
     "Python.zadanie 6.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "#7 on ecommerce__pipeline",
+    "git-widget-placeholder": "eitca",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/Asus/PycharmProjects/DataScience/data",
     "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Console Font"
@@ -140,14 +150,14 @@
       <recent name="C:\Users\mazurp2\PycharmProjects\Data Science\.venv" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Asus\PycharmProjects\DataScience\ml_benchmark_suite\data" />
       <recent name="C:\Users\Asus\PycharmProjects\DataScience\data" />
       <recent name="C:\Users\Asus\PycharmProjects\DataScience\general_python" />
       <recent name="C:\Users\Asus\PycharmProjects\DataScience\various\resources" />
       <recent name="C:\Users\Asus\PycharmProjects\DataScience\various\scikitlearn" />
-      <recent name="C:\Users\mazurp2\PycharmProjects\Data Science\various" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.tensorflow_showcase">
+  <component name="RunManager" selected="Python.initial_iris_dataset">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Data Science" />
       <option name="ENV_FILES" value="" />
@@ -162,6 +172,28 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="initial_iris_dataset" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Data Science" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/forDataScience/eitca" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/forDataScience/eitca/initial_iris_dataset.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -214,28 +246,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="train_test_split_example" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Data Science" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/forDataScience/ML_database" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/forDataScience/ML_database/train_test_split_example.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="wine_cwiczenie" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Data Science" />
       <option name="ENV_FILES" value="" />
@@ -260,11 +270,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.initial_iris_dataset" />
         <item itemvalue="Python.streamlit_app" />
         <item itemvalue="Python.app" />
         <item itemvalue="Python.tensorflow_showcase" />
         <item itemvalue="Python.wine_cwiczenie" />
-        <item itemvalue="Python.train_test_split_example" />
       </list>
     </recent_temporary>
   </component>
@@ -340,7 +350,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779354451076</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Benchmark: Update tournament results after intensive model retraining">
+      <option name="closed" value="true" />
+      <created>1779444657078</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1779444657078</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -351,7 +369,8 @@
     <MESSAGE value="Kafka ecommerce" />
     <MESSAGE value="Analytics: Implement financial insights extraction pipeline via PySpark SQL on Retail Banking data" />
     <MESSAGE value="Docs: Add TensorBoard execution guidelines to README" />
-    <option name="LAST_COMMIT_MESSAGE" value="Docs: Add TensorBoard execution guidelines to README" />
+    <MESSAGE value="Benchmark: Update tournament results after intensive model retraining" />
+    <option name="LAST_COMMIT_MESSAGE" value="Benchmark: Update tournament results after intensive model retraining" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
