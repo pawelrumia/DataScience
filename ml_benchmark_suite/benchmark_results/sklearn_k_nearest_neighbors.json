@@ -1,0 +1,8 @@
+{
+    "framework": "Scikit-Learn",
+    "model_name": "K-Nearest Neighbors",
+    "accuracy": 0.8281,
+    "precision": 0.6821,
+    "recall": 0.578,
+    "training_time_seconds": 0.05
+}

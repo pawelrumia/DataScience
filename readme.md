@@ -117,7 +117,6 @@ Ponieważ środowisko jest w pełni skonteneryzowane, cały turniej możesz wywo
    ```bash
    docker run --rm -it -v "\${PWD}/ml_benchmark_suite/benchmark_results:/workspace/ml_benchmark_suite/benchmark_results" -w /workspace/ml_benchmark_suite melbourne-housing-ml python run_benchmark.py
    ```
-
 ---
 
 # Screenshots
@@ -151,6 +150,44 @@ streamlit run streamlit_app.py
 *Po wpisaniu tej komendy aplikacja automatycznie otworzy się w Twojej przeglądarce pod adresem `http://localhost:8501`.*
 
 ---
+
+## 🎛️ Monitorowanie Eksperymentów (MLflow Model Tracking)
+
+Projekt wykorzystuje system **MLflow** do centralnego logowania parametrów, metryk (Accuracy, Precision, Recall) oraz zamrażania wag modeli (Artefaktów) dla wszystkich trzech użytych frameworków [2.1].
+
+### 🛠️ 1. Uruchamianie procesów treningowych w Dockerze
+
+Aby przeprowadzić trening modeli i zapisać dane eksperymentalne bezpośrednio do współdzielonego katalogu `mlruns/`, uruchom poniższe komendy w terminalu PowerShell (będąc w głównym folderze projektu `DataScience`) [1.110, 2.1]:
+
+```powershell
+# Przebudowanie obrazu po aktualizacji kodów źródłowych
+docker build -t melbourne-housing-ml .
+
+# Trening Scikit-Learn (Random Forest & KNN)
+docker run --rm -it -v "\${PWD}/ml_benchmark_suite:/workspace/ml_benchmark_suite" -w /workspace/ml_benchmark_suite/scikit_learn melbourne-housing-ml python train_sklearn.py
+
+# Trening TensorFlow / Keras (Głęboka sieć neuronowa MLP)
+docker run --rm -it -v "\${PWD}/ml_benchmark_suite:/workspace/ml_benchmark_suite" -w /workspace/ml_benchmark_suite/tensorflow melbourne-housing-ml python train_tf.py
+
+# Trening PyTorch (Niskopoziomowy trening sieci neuronowej MLP)
+docker run --rm -it -v "\${PWD}/ml_benchmark_suite:/workspace/ml_benchmark_suite" -w /workspace/ml_benchmark_suite/pytorch melbourne-housing-ml python train_pytorch.py
+```
+
+### 📊 2. Start Panelu Graficznego MLflow UI
+
+Po zakończeniu procesów obliczeniowych baza danych eksperymentów znajduje się fizycznie na Twoim dysku w folderze `ml_benchmark_suite/mlruns/` [2.1]. Aby uruchomić interaktywny pulpit w przeglądarce, wykonaj poniższe kroki w lokalnym terminalu systemu Windows [2.1]:
+
+```bash
+# 1. Przejdź do katalogu z modułem benchmarku
+cd ml_benchmark_suite
+
+# 2. Uruchom serwer wizualizacji MLflow
+mlflow ui
+```
+
+*   **Adres panelu:** Otwórz przeglądarkę i przejdź pod adres **`http://localhost:5000`** [2.1].
+*   **Porównywanie modeli:** W menu po lewej stronie wybierz eksperyment `Census_Income_Benchmark`, zaznacz checkboxy przy interesujących Cię modelach i kliknij **`Compare`**, aby wygenerować zbiorcze wykresy wydajności [2.1].
+
 
 ## 🚀 Instrukcja dla deweloperów (Git Workflow)
 

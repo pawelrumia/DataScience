@@ -8,6 +8,8 @@ from sklearn.preprocessing import StandardScaler, LabelEncoder
 import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout
+import mlflow
+import mlflow.keras
 
 
 class TensorflowBenchmark:
@@ -50,54 +52,60 @@ class TensorflowBenchmark:
         file_path = f"../benchmark_results/tf_{model_name.lower().replace(' ', '_')}.json"
         with open(file_path, "w") as f:
             json.dump(results, f, indent=4)
-        print(f"💾 Metryki modelu {model_name} zapisane w: {file_path}")
+        print(f"💾 Metryki modelu {model_name} zapisane w pliku JSON: {file_path}")
 
     def run_benchmark(self):
         X_train, X_test, y_train, y_test = self.prepare_data()
 
-        # Konwersja targetu na format akceptowany przez Keras
         y_train = y_train.values.astype(np.float32)
         y_test = y_test.values.astype(np.float32)
 
-        print("🤖 [TensorFlow] Budowanie architektury sieci neuronowej...")
-        # Budujemy sieć: 3 warstwy ukryte z regularyzacją Dropout chroniącą przed overfittingiem
-        model = Sequential([
-            Dense(64, activation='relu', input_shape=(X_train.shape[1],)),
-            Dropout(0.2),
-            Dense(32, activation='relu'),
-            Dropout(0.2),
-            Dense(16, activation='relu'),
-            Dense(1, activation='sigmoid')  # Sigmoid na końcu dla klasyfikacji binarnej (0 lub 1)
-        ])
+        # Włączenie pełnego autologowania dla TensorFlow (przechwytuje epoki, loss i architekturę)
+        mlflow.set_tracking_uri("file:../mlruns")
+        mlflow.set_experiment("Census_Income_Benchmark")
+        mlflow.tensorflow.autolog()
 
-        model.compile(
-            optimizer='adam',
-            loss='binary_crossentropy',
-            metrics=[
-                tf.keras.metrics.BinaryAccuracy(name='accuracy'),
-                tf.keras.metrics.Precision(name='precision'),
-                tf.keras.metrics.Recall(name='recall')
-            ]
-        )
+        with mlflow.start_run(run_name="TensorFlow_Keras_MLP"):
+            print("🤖 [TensorFlow] Budowanie architektury sieci neuronowej...")
+            model = Sequential([
+                Dense(64, activation='relu', input_shape=(X_train.shape[1],)),
+                Dropout(0.2),
+                Dense(32, activation='relu'),
+                Dropout(0.2),
+                Dense(16, activation='relu'),
+                Dense(1, activation='sigmoid')
+            ])
 
-        print("🧠 [TensorFlow] Rozpoczynanie uczenia głębokiego (Deep Learning)...")
-        start_time = time.time()
+            model.compile(
+                optimizer='adam',
+                loss='binary_crossentropy',
+                metrics=[
+                    tf.keras.metrics.BinaryAccuracy(name='accuracy'),
+                    tf.keras.metrics.Precision(name='precision'),
+                    tf.keras.metrics.Recall(name='recall')
+                ]
+            )
 
-        # Trenujemy przez 15 epok (zbiór jest duży, więc waga zoptymalizuje się szybko)
-        model.fit(X_train, y_train, epochs=100, batch_size=32, validation_split=0.1, verbose=0)
-        duration_tf = time.time() - start_time
+            print("🧠 [TensorFlow] Rozpoczynanie uczenia głębokiego (Deep Learning)...")
+            start_time = time.time()
+            # Zwiększamy liczbę epok dla dłuższego, dokładniejszego treningu
+            model.fit(X_train, y_train, epochs=30, batch_size=32, validation_split=0.1, verbose=0)
+            duration_tf = time.time() - start_time
 
-        print("🔬 [TensorFlow] Ewaluacja sieci na zbiorze testowym...")
-        loss, accuracy, precision, recall = model.evaluate(X_test, y_test, verbose=0)
+            print("🔬 [TensorFlow] Ewaluacja sieci na zbiorze testowym...")
+            loss, accuracy, precision, recall = model.evaluate(X_test, y_test, verbose=0)
 
-        self.save_results(
-            model_name="Neural Network MLP",
-            accuracy=accuracy,
-            precision=precision,
-            recall=recall,
-            duration=duration_tf
-        )
+            # Manualne zalogowanie czasu do bazy eksperymentu MLflow
+            mlflow.log_metric("training_time_seconds", duration_tf)
 
+            # Tradycyjny zapis do pliku JSON
+            self.save_results(
+                model_name="Neural Network MLP",
+                accuracy=accuracy,
+                precision=precision,
+                recall=recall,
+                duration=duration_tf
+            )
 
 if __name__ == "__main__":
     bench = TensorflowBenchmark()

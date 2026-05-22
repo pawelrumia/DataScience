@@ -9,9 +9,10 @@ import torch.optim as optim
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.metrics import accuracy_score, precision_score, recall_score
+import mlflow
+import mlflow.pytorch
 
 
-# 1. Definicja architektury sieci w PyTorch (odpowiednik modelu Keras)
 class CensusMLP(nn.Module):
     def __init__(self, input_dim):
         super(CensusMLP, self).__init__()
@@ -25,7 +26,7 @@ class CensusMLP(nn.Module):
             nn.Linear(32, 16),
             nn.ReLU(),
             nn.Linear(16, 1),
-            nn.Sigmoid()  # Wyjście 0-1 do klasyfikacji binarnej
+            nn.Sigmoid()
         )
 
     def forward(self, x):
@@ -59,7 +60,6 @@ class PyTorchBenchmark:
         X_scaled = StandardScaler().fit_transform(X)
         X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, random_state=42)
 
-        # Konwersja na Tensory PyTorch (wymóg konieczny)
         X_train_t = torch.FloatTensor(X_train)
         y_train_t = torch.FloatTensor(y_train.values).unsqueeze(1)
         X_test_t = torch.FloatTensor(X_test)
@@ -77,56 +77,72 @@ class PyTorchBenchmark:
             "recall": round(float(recall), 4),
             "training_time_seconds": round(float(duration), 2)
         }
-        file_path = f"../benchmark_results/pytorch_{model_name.lower().replace(' ', '_')}.json"
+        file_path = f"../benchmark_results/pytorch_{model_name.lower().replace(' ', '_').replace('-', '_')}.json"
         with open(file_path, "w") as f:
             json.dump(results, f, indent=4)
-        print(f"💾 Metryki modelu {model_name} zapisane w: {file_path}")
+        print(f"💾 Metryki modelu {model_name} zapisane w pliku JSON: {file_path}")
 
     def run_benchmark(self):
         X_train, X_test, y_train, y_test = self.prepare_data()
 
-        # Inicjalizacja modelu, funkcji straty i optymalizatora Adam
-        model = CensusMLP(input_dim=X_train.shape[1])
-        criterion = nn.BCELoss()  # Binary Cross Entropy Loss
-        optimizer = optim.Adam(model.parameters(), lr=0.001)
+        mlflow.set_tracking_uri("file:../mlruns")
+        mlflow.set_experiment("Census_Income_Benchmark")
 
-        print("🧠 [PyTorch] Rozpoczynanie niskopoziomowej pętli uczenia (50 epok)...")
-        start_time = time.time()
+        with mlflow.start_run(run_name="PyTorch_Natywny_MLP"):
+            model = CensusMLP(input_dim=X_train.shape[1])
+            criterion = nn.BCELoss()
+            optimizer = optim.Adam(model.parameters(), lr=0.001)
 
-        # Jawna pętla treningowa PyTorch
-        epochs = 200
-        batch_size = 32
+            # Podkręcone parametry pętli uczącej
+            epochs = 100
+            batch_size = 32
+            mlflow.log_param("epochs", epochs)
+            mlflow.log_param("batch_size", batch_size)
 
-        for epoch in range(epochs):
-            model.train()
-            # Prosty mechanizm dzielenia na paczki (batching) w pamięci
-            permutation = torch.randperm(X_train.size()[0])
-            for i in range(0, X_train.size()[0], batch_size):
-                indices = permutation[i:i + batch_size]
-                batch_x, batch_y = X_train[indices], y_train[indices]
+            print("🧠 [PyTorch] Rozpoczynanie niskopoziomowej pętli uczenia...")
+            start_time = time.time()
 
-                optimizer.zero_grad()  # Wyczyszczenie starych gradientów
-                outputs = model(batch_x)  # Krok w przód (Forward pass)
-                loss = criterion(outputs, batch_y)  # Obliczenie błędu
-                loss.backward()  # Wsteczna propagacja (Backward pass)
-                optimizer.step()  # Aktualizacja wag wag sieci
+            for epoch in range(epochs):
+                model.train()
+                permutation = torch.randperm(X_train.size()[0])
+                epoch_loss = 0.0
 
-        duration_pt = time.time() - start_time
-        print("🔬 [PyTorch] Ewaluacja sieci na zbiorze testowym...")
+                for i in range(0, X_train.size()[0], batch_size):
+                    indices = permutation[i:i + batch_size]
+                    batch_x, batch_y = X_train[indices], y_train[indices]
 
-        model.eval()
-        with torch.no_grad():
-            raw_preds = model(X_test)
-            preds = raw_preds.round().numpy()  # Zaokrąglamy prawdopodobieństwa do 0 lub 1
-            y_true = y_test.numpy()
+                    optimizer.zero_grad()
+                    outputs = model(batch_x)
+                    loss = criterion(outputs, batch_y)
+                    loss.backward()
+                    optimizer.step()
+                    epoch_loss += loss.item()
 
-        self.save_results(
-            model_name="Neural Network MLP",
-            accuracy=accuracy_score(y_true, preds),
-            precision=precision_score(y_true, preds, zero_division=0),
-            recall=recall_score(y_true, preds, zero_division=0),
-            duration=duration_pt
-        )
+                # Wysyłanie błędu epoki do wykresu liniowego w MLflow
+                mlflow.log_metric("epoch_loss", epoch_loss / (X_train.size()[0] / batch_size), step=epoch)
+
+            duration_pt = time.time() - start_time
+            print("🔬 [PyTorch] Ewaluacja sieci na zbiorze testowym...")
+
+            model.eval()
+            with torch.no_grad():
+                raw_preds = model(X_test)
+                preds = raw_preds.round().numpy()
+                y_true = y_test.numpy()
+
+            acc = accuracy_score(y_true, preds)
+            prec = precision_score(y_true, preds, zero_division=0)
+            rec = recall_score(y_true, preds, zero_division=0)
+
+            # Rejestracja końcowych wskaźników jakości i struktury modelu w MLflow
+            mlflow.log_metric("accuracy", acc)
+            mlflow.log_metric("precision", prec)
+            mlflow.log_metric("recall", rec)
+            mlflow.log_metric("training_time_seconds", duration_pt)
+            mlflow.pytorch.log_model(model, "pytorch_model")
+
+            # Tradycyjny zapis do pliku JSON
+            self.save_results("Neural Network MLP", acc, prec, rec, duration_pt)
 
 
 if __name__ == "__main__":
