@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e80b3e9-f5da-457b-9e3e-65e78423aa2e" name="Changes" comment="Analytics: Implement financial insights extraction pipeline via PySpark SQL on Retail Banking data">
+    <list default="true" id="2e80b3e9-f5da-457b-9e3e-65e78423aa2e" name="Changes" comment="Docs: Add TensorBoard execution guidelines to README">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,14 +125,15 @@
     "Python.zadanie 6.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "#6 on ecommerce__pipeline",
+    "git-widget-placeholder": "#7 on ecommerce__pipeline",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Asus/PycharmProjects/DataScience/various/resources",
+    "last_opened_file_path": "C:/Users/Asus/PycharmProjects/DataScience/data",
     "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Console Font"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Asus\PycharmProjects\DataScience\data" />
       <recent name="C:\Users\Asus\PycharmProjects\DataScience\various\resources" />
       <recent name="C:\Users\Asus\PycharmProjects\DataScience\various\scikitlearn" />
       <recent name="C:\Users\mazurp2\PycharmProjects\Data Science\various\resources" />
@@ -329,7 +332,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779353814925</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Docs: Add TensorBoard execution guidelines to README">
+      <option name="closed" value="true" />
+      <created>1779354451076</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1779354451076</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -339,7 +350,8 @@
     <MESSAGE value="Added TensorFlow showcase project" />
     <MESSAGE value="Kafka ecommerce" />
     <MESSAGE value="Analytics: Implement financial insights extraction pipeline via PySpark SQL on Retail Banking data" />
-    <option name="LAST_COMMIT_MESSAGE" value="Analytics: Implement financial insights extraction pipeline via PySpark SQL on Retail Banking data" />
+    <MESSAGE value="Docs: Add TensorBoard execution guidelines to README" />
+    <option name="LAST_COMMIT_MESSAGE" value="Docs: Add TensorBoard execution guidelines to README" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
