@@ -9,6 +9,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score, precision_score, recall_score
 import mlflow
 import mlflow.sklearn
+import joblib
 
 
 class SklearnBenchmark:
@@ -72,6 +73,15 @@ class SklearnBenchmark:
 
             rf = RandomForestClassifier(n_estimators=n_est, max_depth=max_d, random_state=42, n_jobs=-1)
             rf.fit(X_train, y_train)
+
+            # zapisywanie modeli Random Forest do katalogu `models` w formacie pickle
+            base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            models_dir = os.path.join(base_dir, "..", "models")
+            os.makedirs(models_dir, exist_ok=True)
+
+            joblib.dump(rf, os.path.join(models_dir, "census_rf_model.pkl"))
+            print(
+                f"💾 Model Random Forest został pomyślnie zapisany w: {os.path.join(models_dir, 'census_rf_model.pkl')}")
             duration_rf = time.time() - start_time
 
             preds_rf = rf.predict(X_test)

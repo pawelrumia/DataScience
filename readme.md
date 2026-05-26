@@ -105,7 +105,7 @@ Ponieważ środowisko jest w pełni skonteneryzowane, cały turniej możesz wywo
 
 2. **Uruchomienie modułu TensorFlow / Keras (Trening sieci neuronowej MLP):**
    ```bash
-   docker run --rm -it -v "\${PWD}/ml_benchmark_suite/benchmark_results:/workspace/ml_benchmark_suite/benchmark_results" -w /workspace/ml_benchmark_suite/tensorflow melbourne-housing-ml python train_tf.py
+   docker run --rm -it -v "\${PWD}/ml_benchmark_suite/benchmark_results:/workspace/ml_benchmark_suite/benchmark_results" -w /workspace/ml_benchmark_suite/tensorflow_keras melbourne-housing-ml python train_tf.py
    ```
 
 3. **Uruchomienie modułu PyTorch (Niskopoziomowy trening sieci neuronowej MLP):**
@@ -260,6 +260,41 @@ Projekt umożliwia śledzenie metryk treningowych głębokiej sieci neuronowej K
    ```
    *Panel interaktywnych wykresów sieci neuronowej dostępny jest pod adresem: `http://localhost:6006`.*
 lub zwykłe             tensorboard --logdir=logs
+
+
+
+## 🔮 Wdrożenie Produkcyjne i Predykcja Standalone (Inference Pipeline)
+
+Projekt wspiera pełen cykl produkcyjny MLOps. Po ukończeniu masowego turnieju frameworków, najlepsze wersje modeli oraz instrukcje transformacji danych są automatycznie serializowane (zamrażane) na dysku w katalogu `models/` [2.1]:
+*   `census_rf_model.pkl` — Zamrożone wagi matematyczne lasu losowego (Scikit-Learn) [2.1]
+*   `census_tf_model.keras` — Struktura i wagi głębokiej sieci neuronowej (TensorFlow) [2.1]
+*   `census_tf_scaler.pkl` — Zapisany stan skalera cech numerycznych pod sieć neuronową [2.1]
+
+Niezależny moduł `predict_new_client.py` implementuje architekturę dynamicznego ładowania tych artefaktów z dysku. Pozwala on na natychmiastowe przeprowadzenie predykcji na surowych danych nowego obywatela bez konieczności ponownego uczenia modeli [2.1].
+
+### 🏃‍♂️ Uruchomienie predykcji standalone w Dockerze
+
+Aby załadować zamrożone modele i sprawdzić wielomodelowy werdykt finansowy dla nowego profilu klienta, uruchom w terminalu PowerShell poniższą komendę (pamiętaj o podwójnym wolumenie `-v`, który łączy kody oraz zapisane modele z Windowsem) [1.110, 2.1]:
+
+```powershell
+docker run --rm -it -v "${PWD}/ml_benchmark_suite:/workspace/ml_benchmark_suite" -v "${PWD}/models:/workspace/models" -w /workspace/ml_benchmark_suite melbourne-housing-ml python predict_new_client.py
+```
+
+### 🎯 Przykładowy werdykt porównawczy w konsoli:
+```text
+📥 Ładowanie modeli i skalerów z dysku...
+🔮 Analiza profilu nowego obywatela...
+
+🏆 ======================================================= 🏆
+                 PORÓWNANIE WERDYKTÓW MODELI                 
+🏆 ======================================================= 🏆
+🌲 [Scikit-Learn Random Forest]:
+   -> Klasa: POWYŻEJ \$50k (Prawdopodobieństwo klasy >50k: 80.00%)
+
+🧠 [TensorFlow Deep Learning NN]:
+   -> Klasa: POWYŻEJ \$50k (Prawdopodobieństwo klasy >50k: 81.44%)
+=============================================================
+```
 
 ---
 *Projekt rozwijany w celach demonstracyjnych i portfolio z zakresu Data Science & MLOps.*

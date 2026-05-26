@@ -141,7 +141,7 @@ DataScience/
 Install dependencies:
 
 ```bash
-pip install tensorflow pandas numpy matplotlib seaborn scikit-learn tensorboard
+pip install tensorflow_keras pandas numpy matplotlib seaborn scikit-learn tensorboard
 ```
 
 Run project:
