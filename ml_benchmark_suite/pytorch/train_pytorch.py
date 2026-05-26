@@ -93,6 +93,10 @@ class PyTorchBenchmark:
             criterion = nn.BCELoss()
             optimizer = optim.Adam(model.parameters(), lr=0.001)
 
+            # Inicjalizacja writera TensorBoard dla PyTorcha
+            from torch.utils.tensorboard import SummaryWriter
+            writer = SummaryWriter(log_dir="../logs/pytorch_mlp")
+
             # Podkręcone parametry pętli uczącej
             epochs = 100
             batch_size = 32
@@ -117,11 +121,15 @@ class PyTorchBenchmark:
                     loss.backward()
                     optimizer.step()
                     epoch_loss += loss.item()
+                #Po każdej epoce jawnie wysyłamy błąd do TensorBoarda
+                current_epoch_loss = epoch_loss / (X_train.size()[0] / batch_size)
+                writer.add_scalar("Loss/train", current_epoch_loss, epoch)
 
                 # Wysyłanie błędu epoki do wykresu liniowego w MLflow
                 mlflow.log_metric("epoch_loss", epoch_loss / (X_train.size()[0] / batch_size), step=epoch)
 
             duration_pt = time.time() - start_time
+            writer.close()  # Zamykamy writer po treningu
             print("🔬 [PyTorch] Ewaluacja sieci na zbiorze testowym...")
 
             model.eval()

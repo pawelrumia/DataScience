@@ -4,19 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e80b3e9-f5da-457b-9e3e-65e78423aa2e" name="Changes" comment="Benchmark: Update tournament results after intensive model retraining">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="2e80b3e9-f5da-457b-9e3e-65e78423aa2e" name="Changes" comment="Add complete MLflow training and UI execution">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ml_benchmark_suite/benchmark_results/pytorch_neural_network_mlp.json" beforeDir="false" afterPath="$PROJECT_DIR$/ml_benchmark_suite/benchmark_results/pytorch_neural_network_mlp.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ml_benchmark_suite/benchmark_results/sklearn_k-nearest_neighbors.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml_benchmark_suite/benchmark_results/sklearn_k_nearest_neighbors.json" beforeDir="false" afterPath="$PROJECT_DIR$/ml_benchmark_suite/benchmark_results/sklearn_k_nearest_neighbors.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ml_benchmark_suite/benchmark_results/sklearn_random_forest.json" beforeDir="false" afterPath="$PROJECT_DIR$/ml_benchmark_suite/benchmark_results/sklearn_random_forest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ml_benchmark_suite/benchmark_results/tf_neural_network_mlp.json" beforeDir="false" afterPath="$PROJECT_DIR$/ml_benchmark_suite/benchmark_results/tf_neural_network_mlp.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ml_benchmark_suite/pytorch/train_pytorch.py" beforeDir="false" afterPath="$PROJECT_DIR$/ml_benchmark_suite/pytorch/train_pytorch.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ml_benchmark_suite/scikit_learn/train_sklearn.py" beforeDir="false" afterPath="$PROJECT_DIR$/ml_benchmark_suite/scikit_learn/train_sklearn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ml_benchmark_suite/tensorflow/train_tf.py" beforeDir="false" afterPath="$PROJECT_DIR$/ml_benchmark_suite/tensorflow/train_tf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml_benchmark_suite/tensorflow/train_tf.py" beforeDir="false" afterPath="$PROJECT_DIR$/ml_benchmark_suite/tensorflow_keras/train_tf.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme_tensor.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme_tensor.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -358,7 +356,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779444657078</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Add complete MLflow training and UI execution">
+      <option name="closed" value="true" />
+      <created>1779452138083</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1779452138083</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -370,7 +376,8 @@
     <MESSAGE value="Analytics: Implement financial insights extraction pipeline via PySpark SQL on Retail Banking data" />
     <MESSAGE value="Docs: Add TensorBoard execution guidelines to README" />
     <MESSAGE value="Benchmark: Update tournament results after intensive model retraining" />
-    <option name="LAST_COMMIT_MESSAGE" value="Benchmark: Update tournament results after intensive model retraining" />
+    <MESSAGE value="Add complete MLflow training and UI execution" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add complete MLflow training and UI execution" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
